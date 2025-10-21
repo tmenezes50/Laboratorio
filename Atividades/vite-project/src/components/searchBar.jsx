@@ -1,28 +1,23 @@
-import React from "react";
+import React from 'react';
 
-function SearchBar({
-  filterText,
-  inStockOnly,
-  onFilterTextChange,
-  onInStockOnlyChange,
-}) {
+function SearchBar({ filterText, inStockOnly, onFilterTextChange, onInStockOnlyChange }) {
   return (
     <form>
       <input
         type="text"
-        placeholde="Pesquisar..."
         value={filterText}
+        placeholder="Search..."
         onChange={(e) => onFilterTextChange(e.target.value)}
       />
-
-      <p>
+      <label>
         <input
           type="checkbox"
           checked={inStockOnly}
           onChange={(e) => onInStockOnlyChange(e.target.checked)}
-        />{" "}
-        Apenas Produtos em Estoque
-      </p>
+        />
+        {' '}
+        Mostrar Apanas Procutos em estoque
+      </label>
     </form>
   );
 }
